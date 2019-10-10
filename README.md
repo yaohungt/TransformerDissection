@@ -49,6 +49,7 @@ We present a new formulation of attention via the lens of kernel. This formulati
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />
 </p>
+
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> being the positional embedding space.
 
 2. Image Transformer ([Parmar _et al._, 2018](https://arxiv.org/abs/1802.05751)):
