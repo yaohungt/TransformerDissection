@@ -46,12 +46,14 @@ We present a new formulation of attention via the lens of kernel. This formulati
 ##### Kernel Feature Space <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}" />
 
 1. Sequence Transformer ([Vaswani _et al._, 2017](https://arxiv.org/abs/1706.03762), [Dai _et al._, 2019](https://arxiv.org/abs/1901.02860)):
-<img align="center" src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />
+<p align="center">
+<img align="center" src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />  </p>
+
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> being the positional embedding space.
 
 2. Image Transformer ([Parmar _et al._, 2018](https://arxiv.org/abs/1802.05751)):
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{H}\times\mathcal{W})"> </p>
+<img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{H}\times\mathcal{W})" /> </p>
 
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{H}" /> being the positional space of the height in an image, and <img src="https://latex.codecogs.com/svg.latex?\mathcal{W}" /> being the positional space of the width in an image.
 
