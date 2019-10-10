@@ -84,4 +84,21 @@ We empirically observe set fitering function contains additional memories work t
 
 ## Exploring the Design of Attention
 
+We see that by chaning the kernel construction, we can define a larger space of composing Attention. As an example, in the paper, we present a new form of Attention with a kernel that is
 
+- valid (i.e., a kernel that is symmetric and positive semi-definite)
+- delicate in the sense of constructing a kernel on a joint space (i.e., <img align="center" src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />)
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\begin{align*}&k(x_q,x_k):=k_F\Big(f_q,f_k\Big)\cdot\,k_T\Big(t_q,t_k\Big)\\&\mathrm{with}\,\,k_{F}(f_q,f_k)=\mathrm{exp}\Big(\frac{\langle\,f_qW_F,f_kW_F\rangle}{\sqrt{d_k}}\Big)\\&\mathrm{and}\,\,\,\,k_{T}(t_q,t_k)=\mathrm{exp}\Big(\frac{\langle\,t_qW_T,t_kW_T\rangle}{\sqrt{d_k}}\Big),\end{align*}" />
+</p>
+
+We empirically show that this form of kernel construction in Transformer's attention works as good as the kernel construction in [Transformer-XL](https://arxiv.org/abs/1901.02860). 
+
+## Non-Order-Invariance in Decoder Self-Attention
+
+We have a large paragraph in the paper discussing the order-invariance problem in Transformer's attention. The main take-away is **the operation in decoder self-attention is not order-agnositc**. For example, **removing positional embedding** in decoder self-attention (in [original Transformer](https://arxiv.org/abs/1706.03762)) will **NOT** decrease the performance at all. But **a better way to integrate positional embedding**, our kernel construction for example, **still improves** over not considering positional embedding.
+
+## Questions?
+
+Apologize that the paper isn't organized perfectly. Please use **issues** to ask questions.
