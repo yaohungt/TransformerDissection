@@ -49,13 +49,12 @@ We present a new formulation of attention via the lens of kernel. This formulati
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />
 </p>
-
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> being the positional embedding space.
 
 2. Image Transformer ([Parmar _et al._, 2018](https://arxiv.org/abs/1802.05751)):
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{H}\times\mathcal{W})" />
-</p>
+<img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{H}\times\mathcal{W})"> </p>
+
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{H}" /> being the positional space of the height in an image, and <img src="https://latex.codecogs.com/svg.latex?\mathcal{W}" /> being the positional space of the width in an image.
 
 3. Set Transformer ([Lee _et al._, 2018](https://arxiv.org/abs/1810.00825)):
@@ -73,7 +72,7 @@ with no any positional information present.
 with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^\ell" /> representing the language feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^v" /> representing the vision feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^a" /> representing the audio feature space, and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> representing the temporal indicator space. 
 
 ##### Kernel Construction and the Role of Positional Embedding <img src="https://latex.codecogs.com/svg.latex?k(\cdot,\cdot)" />
-Most of the work utilizes __assymetric exponential kernel__ with learned mappings <img src="https://latex.codecogs.com/svg.latex?W_q, W_k" /> and scaled factor <img src="https://latex.codecogs.com/svg.latex?\sqrt{d_k}" />:
+Most of the work utilizes __assymetric exponential kernel__ with learned mappings <img src="https://latex.codecogs.com/svg.latex?W_q,W_k" /> and scaled factor <img src="https://latex.codecogs.com/svg.latex?\sqrt{d_k}" />:
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?k_{\mathrm{exp}}(f_q,f_k)=\mathrm{exp}\left(\frac{\langle\,f_qW_q,f_kW_k\rangle}{\sqrt{d_k}}\right)." />
 </p>
