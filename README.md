@@ -68,7 +68,20 @@ For the above variants of positional embedding integration, we find product kern
 
 ### Value Function <img src="https://latex.codecogs.com/svg.latex?v(\cdot)" />
 
+1. With Positional Embedding ([Vaswani _et al._, 2017](https://arxiv.org/abs/1706.03762), [Child _et al._, 2019](https://arxiv.org/abs/1904.10509)): <img src="https://latex.codecogs.com/svg.latex?v(x_k)=v((f_k,t_k)):=(f_k+t_k)W_v" />.
+2. Without Positional Embedding ([Dai _et al._, 2019](https://arxiv.org/abs/1901.02860), [Shaw _et al._, 2018](https://arxiv.org/abs/1803.02155), [Huang _et al._, 2018](https://arxiv.org/abs/1809.04281)): <img src="https://latex.codecogs.com/svg.latex?v(x_k)=v((f_k,t_k)):=f_kW_v" />.
+
+We empirically observe the value function without positional embedding works better.
+
 ### Set Filtering Function <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})" />
 
+1. Encoder Self-Attention/ Encoder-Decoder Attention in original Transformer ([Vaswani _et al._, 2017](https://arxiv.org/abs/1706.03762)): <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})=S_{\mathbf{x}_k}" />.
+2. Decoder Self-Attention in original Transformer ([Vaswani _et al._, 2017](https://arxiv.org/abs/1706.03762)): <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})\supset\,S_{\mathbf{x}_k}" />. Define <img src="https://latex.codecogs.com/svg.latex?S_1" /> as the set returned here. 
+3. Decoder Self-Attention in Transformer-XL ([Dai _et al._, 2019](https://arxiv.org/abs/1901.02860)): <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})=\,S_1+S_{mem}" />. <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})\supset\,S_1" />. <img src="https://latex.codecogs.com/svg.latex?S_{mem}" /> refers to additional memories.
+4. Decoder Self-Attention in Sparse Transformer ([Child _et al._, 2019](https://arxiv.org/abs/1904.10509)): <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})\subset\,S_1" />.
+
+We empirically observe set fitering function contains additional memories work the best.
+
+## Exploring the Design of Attention
 
 
