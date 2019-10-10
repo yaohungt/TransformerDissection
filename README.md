@@ -29,7 +29,7 @@ Please cite our paper if you find our work useful for your research:
 ### Achievement
 We present a new formulation of attention via the lens of kernel. This formulation highlights naturally the main components of Transformer's attention, enabling better understanding of this mechanism. Recent variants of Transformers can be expressed through these individual components. The approach also paves the way to a larger space of composing Transformer's attention.
 
-### Kernel-Based Formulation of Transformer's Attention
+## Kernel-Based Formulation of Transformer's Attention
 
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?\mathrm{Attention}\Big(x_q\,\,;\,\,M(x_q,S_{\mathbf{x}_k})\Big)=\sum_{{x_k}\in\,M(x_q,S_{\mathbf{x}_k})}\frac{k(x_q,x_k)}{\sum_{{x_k}'\in\,M(x_q,S_{\mathbf{x}_k})}k(x_q,{x_k}')}v(x_k)=\mathbb{E}_{p(x_k|x_q)}\Big[v(x_k)\Big]" />
@@ -42,8 +42,8 @@ We present a new formulation of attention via the lens of kernel. This formulati
 * <img src="https://latex.codecogs.com/svg.latex?v(\cdot)" /> : __value__ function
 * <img src="https://latex.codecogs.com/svg.latex?p(x_k|x_q)=\frac{k(x_q,x_k)}{\sum_{{x_k}'\in\,M(x_q,S_{\mathbf{x}_k})}k(x_q,{x_k}')}" /> : linear smoother with kernel smoothing
 
-### Dissecting Individual Components
-***Kernel Feature Space*** <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}" />
+## Dissecting Individual Components
+### Kernel Feature Space <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}" />
 
 1. Sequence Transformer ([Vaswani _et al._, 2017](https://arxiv.org/abs/1706.03762), [Dai _et al._, 2019](https://arxiv.org/abs/1901.02860)): <img align="center" src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" /> with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> being the positional embedding space.
 2. Image Transformer ([Parmar _et al._, 2018](https://arxiv.org/abs/1802.05751)): <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{H}\times\mathcal{W})" /> with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}" /> being non-positional feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{H}" /> being the positional space of the height in an image, and <img src="https://latex.codecogs.com/svg.latex?\mathcal{W}" /> being the positional space of the width in an image.
@@ -51,7 +51,7 @@ We present a new formulation of attention via the lens of kernel. This formulati
 4. Multimodal Transformer ([Tsai _et al._, 2019](https://arxiv.org/abs/1906.00295)): <img src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}^\ell\times\mathcal{F}^v\times\mathcal{F}^a\times\mathcal{T})" />
  with <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^\ell" /> representing the language feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^v" /> representing the vision feature space, <img src="https://latex.codecogs.com/svg.latex?\mathcal{F}^a" /> representing the audio feature space, and <img src="https://latex.codecogs.com/svg.latex?\mathcal{T}" /> representing the temporal indicator space. 
 
-***Kernel Construction and the Role of Positional Embedding*** <img src="https://latex.codecogs.com/svg.latex?k(\cdot,\cdot)" />
+### Kernel Construction and the Role of Positional Embedding <img src="https://latex.codecogs.com/svg.latex?k(\cdot,\cdot)" />
 
 Most of the work utilizes __assymetric exponential kernel__ with learned mappings <img src="https://latex.codecogs.com/svg.latex?W_q,W_k" /> and scaled factor <img src="https://latex.codecogs.com/svg.latex?\sqrt{d_k}" />:
 <p align="center">
@@ -66,9 +66,9 @@ Note that in the paper, we also try linear, polynomial, and rbf kernel. We obser
 
 For the above variants of positional embedding integration, we find product kernel (relative positional embedding by [Dai _et al._, 2019](https://arxiv.org/abs/1901.02860)) works the best.
 
-***Value Function*** <img src="https://latex.codecogs.com/svg.latex?v(\cdot)" />
+### Value Function <img src="https://latex.codecogs.com/svg.latex?v(\cdot)" />
 
-***Set Filtering Function*** <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})" />
+### Set Filtering Function <img src="https://latex.codecogs.com/svg.latex?M(x_q,S_{\mathbf{x}_k})" />
 
 
 
