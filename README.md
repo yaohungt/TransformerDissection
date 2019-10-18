@@ -23,6 +23,8 @@ Please cite our paper if you find our work useful for your research:
 
 ## Overview
 
+**[2019/10/18]** I am planning to provide the code snippets in the paper, I will finish it within one or two weeks.
+
 ### Inspiration
 *Transformer's attention* and *kernel learning* both concurrently and order-agnostically process all inputs by calculating the similarity between inputs. 
 
