@@ -53,7 +53,7 @@ We present a new formulation of attention via the lens of kernel. This formulati
 
 ### Kernel Construction and the Role of Positional Embedding <img src="https://latex.codecogs.com/svg.latex?k(\cdot,\cdot)" />
 
-Most of the work utilizes __assymetric exponential kernel__ with learned mappings <img src="https://latex.codecogs.com/svg.latex?W_q,W_k" /> and scaled factor <img src="https://latex.codecogs.com/svg.latex?\sqrt{d_k}" />:
+Most of the work utilizes __asymmetric exponential kernel__ with learned mappings <img src="https://latex.codecogs.com/svg.latex?W_q,W_k" /> and scaled factor <img src="https://latex.codecogs.com/svg.latex?\sqrt{d_k}" />:
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?k_{\mathrm{exp}}(f_q,f_k)=\mathrm{exp}\left(\frac{\langle\,f_qW_q,f_kW_k\rangle}{\sqrt{d_k}}\right)." />
 </p>
@@ -84,7 +84,7 @@ We empirically observe set fitering function contains additional memories work t
 
 ## Exploring the Design of Attention
 
-We see that by chaning the kernel construction, we can define a larger space of composing Attention. As an example, in the paper, we present a new form of Attention with a kernel that is
+We see that by changing the kernel construction, we can define a larger space of composing Attention. As an example, in the paper, we present a new form of Attention with a kernel that is
 
 - valid (i.e., a kernel that is symmetric and positive semi-definite)
 - delicate in the sense of constructing a kernel on a joint space (i.e., <img align="center" src="https://latex.codecogs.com/svg.latex?\mathcal{X}:=(\mathcal{F}\times\mathcal{T})" />)
