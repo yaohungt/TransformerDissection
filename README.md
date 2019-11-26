@@ -21,7 +21,7 @@ Please cite our paper if you find our work useful for your research:
 }
 ```
 
-[**Late Nov. 2019**] Will upload a slide for the talk on Transformer Dissection in late Nov. 2019. 
+Slides are [here](https://www.dropbox.com/s/w9ch3n3cxen6oom/slide.pdf?dl=0).
 
 ## Overview
 
